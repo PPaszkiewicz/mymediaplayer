@@ -1,0 +1,33 @@
+<resources>
+	<string name="app_name">Mymediaplayer</string>
+
+	<!-- animated vector data -->
+	<string name="ic_play_pause_vector_group" translatable="false">PlayPauseVectorGroup</string>
+
+	<string name="ic_play_path_stroke" translatable="false">PlayPathStroke</string>
+	<string name="ic_play_path_fill" translatable="false">PlayPathFill</string>
+	<string name="ic_play_path_data" translatable="false">M8,19 L13.5,15.5 L13.5,8.5 L8,5 L8,19 Z M13.5,8.5 L13.5,15.5 L19,12 L19,12 L13.5,8.5 Z</string>
+	<string name="ic_pause_path_stroke" translatable="false">PausePathStroke</string>
+	<string name="ic_pause_path_fill" translatable="false">PausePathFill</string>
+	<string name="ic_pause_path_data" translatable="false">M6,19 L10,19 L10,5 L6,5 L6,19 Z M14,5 L14,19 L18,19 L18,5 L14,5 Z</string>
+
+
+	<string name="ic_volume_mute_vector_group" translatable="false">VolumeMuteVectorGroup</string>
+	<string name="ic_volume_path_stroke" translatable="false">VolumePathStroke</string>
+	<string name="ic_volume_path_fill" translatable="false">VolumePathFill</string>
+	<string name="ic_volume_path_data" translatable="false">M3,9 L3,15 L7,15 L12,20 L12,4 L7,9 L3,9 Z M16.5,12
+C16.5,10.23,15.48,8.71,14,7.97 L14,16.02 C15.48,15.29,16.5,13.77,16.5,12 Z
+M14,3.23 L14,5.29 C16.891,6.15,19,8.83,19,12 S16.891,17.85,14,18.71 L14,20.77
+C18.01,19.86,21,16.281,21,12 S18.01,4.14,14,3.23 Z</string>
+
+	<string name="ic_mute_path_stroke" translatable="false">MutePathStroke</string>
+	<string name="ic_mute_path_fill" translatable="false">MutePathFill</string>
+	<string name="ic_mute_path_data" translatable="false">M7.5,9 L7.5,15 L11.5,15 L16.5,20 L16.5,4 L11.5,9 L7.5,9 Z
+		M14.736,12C14.736,11.469,14.43,11.013,13.986,10.791 L13.986,13.207 C14.431,12.988,14.736,12.531,14.736,12 Z
+		M13.986,9.369 L13.986,9.987
+C14.853,10.245,15.486,11.049,15.486,12
+S14.853,13.755,13.986,14.013 L13.986,14.63
+C15.189,14.357,16.086,13.284,16.086,12
+		S15.189,9.643,13.986,9.369 Z</string>
+
+</resources>

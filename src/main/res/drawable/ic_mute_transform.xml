@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+		android:width="24dp"
+		android:height="24dp"
+		android:viewportHeight="24"
+		android:viewportWidth="24">
+
+	<group android:name="@string/ic_volume_mute_vector_group">
+		<path
+			android:name="@string/ic_mute_path_stroke"
+			android:pathData="@string/ic_mute_path_data"
+			android:strokeColor="@color/volume_muted_stroke"
+			android:strokeWidth="1.2"/>
+
+		<path
+			android:name="@string/ic_mute_path_fill"
+			android:fillColor="@android:color/primary_text_dark"
+			android:pathData="@string/ic_mute_path_data"/>
+	</group>
+</vector>

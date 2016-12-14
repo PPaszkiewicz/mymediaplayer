@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+				android:duration="@android:integer/config_mediumAnimTime"
+				android:interpolator="@android:interpolator/overshoot"
+				android:propertyName="pathData"
+				android:valueFrom="@string/ic_mute_path_data"
+				android:valueTo="@string/ic_volume_path_data"
+				android:valueType="pathType"/>

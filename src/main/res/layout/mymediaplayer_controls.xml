@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+	   xmlns:app="http://schemas.android.com/apk/res-auto"
+	   xmlns:tools="http://schemas.android.com/tools"
+	   android:layout_width="match_parent"
+	   android:layout_height="match_parent">
+
+	<FrameLayout
+		android:id="@+id/mymediaplayer_control_container"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:visibility="gone"
+		tools:visibility="visible">
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:background="@android:color/transparent"
+			android:orientation="horizontal">
+
+			<include layout="@layout/mymediaplayer_playpausevolume_buttons"/>
+		</LinearLayout>
+
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom"
+			android:background="@drawable/drawable_background_gradient_bottom"
+			android:orientation="horizontal"
+			android:paddingLeft="@dimen/activity_horizontal_margin">
+
+			<TextView
+				android:id="@+id/mymediaplayer_text_current"
+				style="@style/TextAppearance.AppCompat.Small.Inverse"
+				android:layout_width="52dp"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:gravity="center"
+				tools:text="0:00"/>
+
+			<SeekBar
+				android:id="@+id/mymediaplayer_seekbar"
+				style="@style/Widget.AppCompat.SeekBar"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_weight="1"/>
+
+			<TextView
+				android:id="@+id/mymediaplayer_text_total"
+				style="@style/TextAppearance.AppCompat.Small.Inverse"
+				android:layout_width="52dp"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:gravity="center"
+				android:paddingRight="@dimen/activity_horizontal_margin"
+				tools:text="1:00"/>
+
+			<ImageView
+				android:id="@+id/mymediaplayer_menu"
+				style="@style/ClickableBorderlessImageView"
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:background="?attr/selectableItemBackground"
+				android:padding="10dp"
+				app:srcCompat="@drawable/ic_menu"/>
+		</LinearLayout>
+
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="32dp"
+			android:background="@drawable/drawable_background_gradient_top"/>
+
+		<ImageView
+			android:id="@+id/mymediaplayer_close"
+			style="@style/ClickableBorderlessImageView"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_gravity="right"
+			android:background="?attr/selectableItemBackground"
+			android:padding="10dp"
+			app:srcCompat="@drawable/ic_close"/>
+	</FrameLayout>
+
+	<ProgressBar
+		android:id="@+id/mymediaplayer_sticky_progress"
+		style="?android:attr/progressBarStyleHorizontal"
+		android:layout_width="match_parent"
+		android:layout_height="2dp"
+		android:layout_alignParentBottom="true"
+		android:background="@color/fadeOutColor"
+		android:indeterminate="false"
+		android:progressDrawable="@drawable/progress_drawable_flat"
+		android:visibility="gone"
+		tools:visibility="visible"/>
+</merge>

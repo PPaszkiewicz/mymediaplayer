@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			 xmlns:tools="http://schemas.android.com/tools"
+			 android:layout_width="wrap_content"
+			 android:layout_height="wrap_content"
+			 android:layout_gravity="center"
+			 android:background="#000000"
+			 android:clickable="true">
+
+	<TextureView
+		android:id="@+id/mymediaplayer_surface"
+		android:layout_width="1dp"
+		android:layout_height="1dp"
+		android:keepScreenOn="true"
+		android:scaleType="fitCenter"/>
+
+	<ImageView
+		android:id="@+id/mymediaplayer_video_thumbnail"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:scaleType="fitCenter"
+		android:visibility="gone"/>
+
+	<paszkiewicz.mymediaplayer.CustomMediaControls
+		android:id="@+id/mymediaplayer_controls"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:visibility="visible"/>
+
+</FrameLayout>
