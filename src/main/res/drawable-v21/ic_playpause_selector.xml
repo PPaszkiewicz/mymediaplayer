@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <item
+        android:id="@+id/state_pause"
+        android:drawable="@drawable/ic_pause"
+        android:state_selected="true" />
+    <item
+        android:id="@+id/state_play"
+        android:drawable="@drawable/ic_play" />
+
+    <!-- from pause to play -->
+    <transition
+        android:fromId="@+id/state_pause"
+        android:toId="@+id/state_play">
+        <aapt:attr name="android:drawable">
+            <animated-vector android:drawable="@drawable/ic_pause">
+                <target
+                    android:name="@string/ic_pause_path_fill"
+                    android:animation="@animator/animator_pause_to_play" />
+                <target
+                    android:name="@string/ic_pause_path_stroke"
+                    android:animation="@animator/animator_pause_to_play" />
+            </animated-vector>
+        </aapt:attr>
+    </transition>
+
+    <!-- from play to pause -->
+    <transition
+        android:fromId="@+id/state_play"
+        android:toId="@+id/state_pause">
+        <aapt:attr name="android:drawable">
+            <animated-vector android:drawable="@drawable/ic_play">
+                <target
+                    android:name="@string/ic_play_path_fill"
+                    android:animation="@animator/animator_play_to_pause" />
+                <target
+                    android:name="@string/ic_play_path_stroke"
+                    android:animation="@animator/animator_play_to_pause" />
+            </animated-vector>
+        </aapt:attr>
+    </transition>
+</animated-selector>

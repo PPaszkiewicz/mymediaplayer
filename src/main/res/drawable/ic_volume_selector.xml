@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/state_muted"
+        android:drawable="@drawable/ic_mute"
+        android:state_selected="true" />
+    <item
+        android:id="@+id/state_volume"
+        android:drawable="@drawable/ic_volume_on" />
+</selector>

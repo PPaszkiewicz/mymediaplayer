@@ -16,14 +16,8 @@ public class MyMediaPlayer extends MediaPlayer implements CustomMediaControls
 	public final static String SAVE_PAUSEDSTATE = "SAVE_PAUSEDSTATE";
 	public final static String SAVE_VOLUME = "SAVE_VOLUME";
 
-	private OnFirstUnpauseListener onFirstUnpauseListener;
 	private float volume;
 	private boolean hasAudio = false;
-
-	/**
-	 * flag that is raised after video is played, while raising we call onFirstUnpauseListener
-	 */
-	private boolean hasPlayedFlag = false;
 
 	/**
 	 * Get saved players state
@@ -120,20 +114,6 @@ public class MyMediaPlayer extends MediaPlayer implements CustomMediaControls
 		}
 	}
 
-	public void setOnFirstUnpauseListener(OnFirstUnpauseListener onFirstUnpauseListener) {
-		this.onFirstUnpauseListener = onFirstUnpauseListener;
-	}
-
-	@Override
-	public void start() {
-		super.start();
-		if (!hasPlayedFlag) {
-			hasPlayedFlag = true;
-			if (onFirstUnpauseListener != null)
-				onFirstUnpauseListener.onFirstVideoUnpause(getCurrentPosition());
-		}
-	}
-
 	@Override
 	public int getBufferPercentage() {
 		return 0;
@@ -141,7 +121,7 @@ public class MyMediaPlayer extends MediaPlayer implements CustomMediaControls
 
 	@Override
 	public boolean canPause() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -152,9 +132,5 @@ public class MyMediaPlayer extends MediaPlayer implements CustomMediaControls
 	@Override
 	public boolean canSeekForward() {
 		return true;
-	}
-
-	public interface OnFirstUnpauseListener {
-		void onFirstVideoUnpause(int milliseconds);
 	}
 }

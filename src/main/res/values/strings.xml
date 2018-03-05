@@ -30,4 +30,10 @@ S14.853,13.755,13.986,14.013 L13.986,14.63
 C15.189,14.357,16.086,13.284,16.086,12
 		S15.189,9.643,13.986,9.369 Z</string>
 
+
+	<declare-styleable name="VectorImageView">
+		<attr name="vectorImageViewSrc" format="reference"/>
+		<attr name="vectorImageViewIgnoreMissingAttributes" format="boolean" />
+	</declare-styleable>
+
 </resources>

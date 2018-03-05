@@ -19,7 +19,23 @@
 			android:background="@android:color/transparent"
 			android:orientation="horizontal">
 
-			<include layout="@layout/mymediaplayer_playpausevolume_buttons"/>
+			<paszkiewicz.mymediaplayer.VectorImageView
+				android:id="@+id/mymediaplayer_playpause"
+				style="@style/ClickableBorderlessImageView"
+				app:vectorImageViewSrc="@drawable/ic_playpause_selector"
+				android:layout_width="64dp"
+				android:layout_height="64dp"
+				android:layout_margin="16dp"
+				android:padding="8dp"/>
+
+			<paszkiewicz.mymediaplayer.VectorImageView
+				android:id="@+id/mymediaplayer_audio"
+				style="@style/ClickableBorderlessImageView"
+				app:vectorImageViewSrc="@drawable/ic_volume_selector"
+				android:layout_width="64dp"
+				android:layout_height="64dp"
+				android:layout_margin="16dp"
+				android:padding="8dp"/>
 		</LinearLayout>
 
 

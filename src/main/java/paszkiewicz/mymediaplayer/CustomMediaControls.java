@@ -6,7 +6,9 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,8 +48,6 @@ public class CustomMediaControls extends RelativeLayout {
 	SeekBar seekBar;
 
 	ProgressBar stickyProgressBar;
-
-	AnimatedVectorButtons vectors;
 
 	/**
 	 * True if progressbar should show on videos longer than
@@ -122,7 +122,7 @@ public class CustomMediaControls extends RelativeLayout {
 		});
 
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-			vectors = new AnimatedVectorButtons(getContext());
+		//	vectors = new AnimatedVectorButtons(getContext());
 		}
 	}
 
@@ -295,20 +295,7 @@ public class CustomMediaControls extends RelativeLayout {
 	private void invalidatePlayPauseButton() {
 		if (mediaPlayer == null)
 			return;
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-			invalidatePlayPauseButtonIconsV21();
-		else invalidatePlayPauseButtonIcons();
-	}
-
-	private void invalidatePlayPauseButtonIcons() {
-		playPauseButton.setImageResource(mediaPlayer.isPlaying() ? R.drawable.ic_pause : R
-				.drawable.ic_play_arrow);
-	}
-
-	@TargetApi(21)
-	private void invalidatePlayPauseButtonIconsV21() {
-		vectors.toggleButtonAnimatedVectorDrawable(playPauseButton, vectors.playPauseVector,
-				vectors.pausePlayVector, mediaPlayer.isPlaying());
+		playPauseButton.setSelected(mediaPlayer.isPlaying());
 	}
 
 	private void onAudioButtonPressed() {
@@ -331,21 +318,7 @@ public class CustomMediaControls extends RelativeLayout {
 			return;
 		}
 		audioButton.setVisibility(VISIBLE);
-
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-			invalidateAudioButtonIconsV21();
-		} else invalidateAudioButtonIcons();
-	}
-
-	private void invalidateAudioButtonIcons() {
-		audioButton.setImageResource(mediaPlayer.isMuted() ? R.drawable.ic_volume_mute : R
-				.drawable.ic_volume);
-	}
-
-	@TargetApi(21)
-	private void invalidateAudioButtonIconsV21() {
-		vectors.toggleButtonAnimatedVectorDrawable(audioButton, vectors.volumeMuteVector, vectors
-				.muteVolumeVector, mediaPlayer.isMuted());
+		audioButton.setSelected(mediaPlayer.isMuted());
 	}
 
 	@Override

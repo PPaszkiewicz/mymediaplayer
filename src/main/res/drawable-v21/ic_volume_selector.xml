@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <item
+        android:id="@+id/state_muted"
+        android:drawable="@drawable/ic_mute"
+        android:state_selected="true" />
+    <item
+        android:id="@+id/state_volume"
+        android:drawable="@drawable/ic_volume_on" />
+
+    <!-- from muted to volume on -->
+    <transition
+        android:fromId="@+id/state_muted"
+        android:toId="@+id/state_volume">
+        <aapt:attr name="android:drawable">
+            <animated-vector android:drawable="@drawable/ic_mute">
+                <target
+                    android:name="@string/ic_mute_path_fill"
+                    android:animation="@animator/animator_mute_to_volume" />
+                <target
+                    android:name="@string/ic_mute_path_stroke"
+                    android:animation="@animator/animator_mute_to_volume" />
+                <target android:name="@string/ic_mute_path_stroke">
+                    <aapt:attr name="android:animation">
+                        <objectAnimator
+                            android:duration="@android:integer/config_mediumAnimTime"
+                            android:interpolator="@android:interpolator/fast_out_slow_in"
+                            android:propertyName="strokeColor"
+                            android:valueFrom="@color/volume_muted_stroke"
+                            android:valueTo="@color/volume_on_stroke"
+                            android:valueType="colorType" />
+                    </aapt:attr>
+                </target>
+            </animated-vector>
+        </aapt:attr>
+    </transition>
+
+    <!-- from volume on to muted -->
+    <transition
+        android:fromId="@+id/state_volume"
+        android:toId="@+id/state_muted">
+        <aapt:attr name="android:drawable">
+            <animated-vector android:drawable="@drawable/ic_volume_on">
+                <target
+                    android:name="@string/ic_volume_path_fill"
+                    android:animation="@animator/animator_volume_to_mute" />
+                <target
+                    android:name="@string/ic_volume_path_stroke"
+                    android:animation="@animator/animator_volume_to_mute" />
+                <target android:name="@string/ic_volume_path_stroke">
+                    <aapt:attr name="android:animation">
+                        <objectAnimator
+                            android:duration="@android:integer/config_mediumAnimTime"
+                            android:interpolator="@android:interpolator/fast_out_slow_in"
+                            android:propertyName="strokeColor"
+                            android:valueFrom="@color/volume_on_stroke"
+                            android:valueTo="@color/volume_muted_stroke"
+                            android:valueType="colorType" />
+                    </aapt:attr>
+                </target>
+            </animated-vector>
+        </aapt:attr>
+    </transition>
+</animated-selector>
