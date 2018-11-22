@@ -12,7 +12,7 @@
 			android:strokeWidth="2"/>
 		<path
 			android:name="@string/ic_pause_path_fill"
-			android:fillColor="@android:color/primary_text_dark"
+			android:fillColor="@android:color/background_light"
 			android:pathData="@string/ic_pause_path_data"/>
 	</group>
 </vector>
