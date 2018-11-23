@@ -14,7 +14,7 @@
 
 		<path
 			android:name="@string/ic_volume_path_fill"
-			android:fillColor="@android:color/primary_text_dark"
+			android:fillColor="@android:color/background_light"
 			android:pathData="@string/ic_volume_path_data"/>
 	</group>
 </vector>
