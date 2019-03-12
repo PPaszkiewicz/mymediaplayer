@@ -50,6 +50,7 @@
 			<TextView
 				android:id="@+id/mymediaplayer_text_current"
 				style="@style/TextAppearance.AppCompat.Small.Inverse"
+				android:textColor="#FFFFFFFF"
 				android:layout_width="52dp"
 				android:layout_height="wrap_content"
 				android:layout_gravity="center_vertical"
@@ -67,6 +68,7 @@
 			<TextView
 				android:id="@+id/mymediaplayer_text_total"
 				style="@style/TextAppearance.AppCompat.Small.Inverse"
+				android:textColor="#FFFFFFFF"
 				android:layout_width="52dp"
 				android:layout_height="wrap_content"
 				android:layout_gravity="center_vertical"
