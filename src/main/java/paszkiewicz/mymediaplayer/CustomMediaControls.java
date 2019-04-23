@@ -120,10 +120,6 @@ public class CustomMediaControls extends RelativeLayout {
 				}
 			}
 		});
-
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-		//	vectors = new AnimatedVectorButtons(getContext());
-		}
 	}
 
 	/**
@@ -149,6 +145,10 @@ public class CustomMediaControls extends RelativeLayout {
 
 		invalidatePlayPauseButton();
 		invalidateAudioButton();
+		// prevent animation on first fadeIn()
+		playPauseButton.jumpDrawablesToCurrentState();
+		audioButton.jumpDrawablesToCurrentState();
+
 		if (!mediaPlayer.isPlaying())
 			fadeIn();
 		else if (isShowStickyProgressBarValid) {
